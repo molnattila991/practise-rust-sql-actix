@@ -3,6 +3,8 @@ version: '3'
 services:
   rust-mysql-test:
     image: rust-mysql-test
+    ports:
+      - 12080:12080
     networks:
       - shop-api-network
     depends_on:

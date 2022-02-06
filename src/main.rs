@@ -33,10 +33,12 @@ fn main() {
         r.id, r.product_name);
     }
 
-    _conn.query_iter("select product_id, name from PRODUCT")
-    .unwrap()
-    .for_each(|row| {
-        let r:(i32, String) = from_row(row.unwrap());
-        println!("{}, {}", r.0, r.1);
-     });   
+    while true{
+        _conn.query_iter("select product_id, name from PRODUCT")
+        .unwrap()
+        .for_each(|row| {
+            let r:(i32, String) = from_row(row.unwrap());
+            println!("{}, {}", r.0, r.1);
+         });
+    }
 }
