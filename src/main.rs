@@ -9,7 +9,10 @@ struct Product {
     product_name: String,
 }
 fn main() {
-    let url = "mysql://shop-api:shop-api@localhost:3306/shop-api";
+    // let url = "mysql://shop-api:shop-api@localhost:3306/shop-api";
+    // let url = "mysql://shop-api:shop-api@172.21.192.1:3306/shop-api";
+    let url = "mysql://shop-api:shop-api@db:3306/shop-api";
+    
     let opt = Opts::from_url(url);
     let pool = Pool::new(opt.unwrap()).unwrap();
     let mut _conn = pool.get_conn().unwrap();

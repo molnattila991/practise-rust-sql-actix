@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  rust-mysql-test:
+    image: rust-mysql-test
+    networks:
+      - shop-api-network
+    depends_on:
+      - db
+    restart: always
   # Database
   db:
     image: mysql:5.7
