@@ -12,12 +12,12 @@ struct Product {
 }
 
 #[get("/")]
-pub async fn hello() -> impl Responder {
+pub async fn say_hello() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
 }
 
 #[get("/jsonList")]
-pub async fn hello2() -> impl Responder {
+pub async fn get_list() -> impl Responder {
     // let url = "mysql://shop-api:shop-api@localhost:3306/shop-api";
     // let url = "mysql://shop-api:shop-api@172.21.192.1:3306/shop-api";
     // let url = "mysql://shop-api:shop-api@db:3306/shop-api";

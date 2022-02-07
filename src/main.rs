@@ -1,14 +1,14 @@
 mod controllers;
 
 use actix_web::{App, HttpServer};
-use controllers::product_controller::{hello, hello2};
+use controllers::product_controller::{say_hello, get_list};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .service(hello)
-            .service(hello2)
+            .service(say_hello)
+            .service(get_list)
     })
     .bind("0.0.0.0:12080")?
     .run()
